@@ -1,0 +1,26 @@
+<div id="buttonPayPal"></div>
+
+<script>
+    paypal.Buttons(
+        {
+            createOrder: function(data, actions){
+                return actions.order.create({
+                    purchase_units:[
+                        { 
+                            amount: {
+                                 value: '{{element.price}}'
+                                // value: '0.01'
+                            }
+                        }
+                    ]
+                })
+            },
+            onApprove: function(data, actions){
+                console.log(data);
+                window.location.href = '/store/capture-payment/' + data.orderID;
+            }
+        }
+    ).render('#buttonPayPal');
+
+    
+</script>

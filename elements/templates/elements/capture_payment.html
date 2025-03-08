@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<script src="https://www.paypal.com/sdk/js?client-id={{paypal_client_id}}"></script>
+
+<div class="card">
+    <div class="card-header">
+        <h1>Payment Process</h1>
+    </div>
+
+    <div class="card-body">
+
+        <ul>
+            <li>id: {{id }}</li>
+            <li>status: {{ status }}</li>
+            <li>price: {{ price }}</li>
+        </ul>
+
+    </div>
+    <div class="card-header">
+        <h5>Traze</h5>
+    </div>
+    <div class="card-body">
+        {{res}}
+    </div>
+</div>
+
+
+{% endblock %}
