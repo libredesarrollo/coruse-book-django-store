@@ -2,6 +2,10 @@
 
 Plantilla base para el curso **"Primeros pasos con Django 5"**, ofrecido por Desarrollo Libre. Este curso está diseñado para guiarte en la creación de aplicaciones web con el potente framework **Django 5** y el lenguaje **Python 3**, utilizando herramientas modernas como **Vue.js**, **Bootstrap 5** y **Tailwind CSS**.
 
+App demo en:
+
+https://course-book-django-store-production.up.railway.app/store/
+
 ---
 
 ## Descripción
