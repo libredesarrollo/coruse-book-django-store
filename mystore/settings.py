@@ -35,7 +35,10 @@ SECRET_KEY = 'django-insecure-yx=atl2^i!azhoi3ci=$85(+pb8%(+e99#lt5wir00=z-47504
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'coruse-book-django-store-production.up.railway.app',
+    'localhost',
+]
 
 
 # Application definition
