@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 #PRODUCTION-------
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "elements" / "static"] 
 #PRODUCTION-------
 
 
