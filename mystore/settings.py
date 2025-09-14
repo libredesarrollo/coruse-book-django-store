@@ -39,6 +39,8 @@ DEBUG = False # PRODUCCION
 ALLOWED_HOSTS = [
     'course-book-django-store-production.up.railway.app',
     'localhost',
+    '127.0.0.1',
+    '0.0.0.0',
 ]
 
 
@@ -57,6 +59,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
