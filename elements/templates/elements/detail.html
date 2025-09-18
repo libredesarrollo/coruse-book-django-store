@@ -11,15 +11,23 @@
 
     <div class="card-body">
 
-        {% include "partials/paypal.html" %}
-        <p>{{element.price}}</p>
-        <div>
+        
+        <p class="text-end">
+            <span class="badge text-bg-warning text-wrap">{{element.price}}$</span>
+        </p>
+
+        <p class="fw-lighter text-center fst-italic">
             {{element.description}}
-        </div>
+        </p>
 
         <div>
             {{element.content}}
         </div>
+
+        <div class="mx-auto mt-4" style="max-width: 300px;">
+            {% include "partials/paypal.html" %}
+        </div>
+
     </div>
 </div>
 

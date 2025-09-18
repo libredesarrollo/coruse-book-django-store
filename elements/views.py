@@ -2,9 +2,9 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from django.conf import settings
 
-import requests
 
-import json
+
+import requests
 
 from .models import Element, Category
 
@@ -15,6 +15,9 @@ class PayPalPayment:
         self.base_url = settings.PAYPAL_BASE_URL
 
     def get_access_token(self):
+
+        if settings.DEMO:
+            return "DEMO_TOKEN"
 
         url = f"{self.base_url}/v1/oauth2/token"
 
@@ -34,6 +37,9 @@ class PayPalPayment:
         return None
     
     def capture_order(self, order_id) -> dict:
+
+
+
         url = f"{self.base_url}/v2/checkout/orders/{order_id}/capture"
 
         access_token = self.get_access_token()

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
+    {% load static  %}
+    {% load  demo_tags %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" 
@@ -9,14 +10,25 @@
     <title>Django</title>
 </head>
 <body>
-   <div class="container">
+   <div class="container mt-2">
+    {% is_demo as demo %}
+    {% if demo %}
+        <div class="alert alert-info" role="alert">
+            <!-- <strong>Atención:</strong> Estás en modo DEMO. -->
+            <ul class="m-0">
+                <li>user: admin</li>
+                <li>password: bPmTxjfYjF33Ur@</li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+        </div>
+    {% endif %} 
     {% block content %}
       
     {% endblock  %}
    </div>
 
     {% block footer %}
-        <footer>
+        <footer class="text-center mt-4">
             <p>2025 - All rights reserved</p>
         </footer>
     {% endblock  %}
