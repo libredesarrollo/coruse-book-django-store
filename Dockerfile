@@ -11,6 +11,14 @@ WORKDIR /app
 # Copiar dependencias primero
 COPY requirements.txt .
 
+# -----------------------------------------------------------
+# PASO ADICIONAL: Instalar dependencias del sistema operativo (para mysqlclient)
+# -----------------------------------------------------------
+RUN apt-get update && \
+    apt-get install -y default-libmysqlclient-dev pkg-config build-essential && \
+    rm -rf /var/lib/apt/lists/*
+# -----------------------------------------------------------
+
 # Instalar dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
